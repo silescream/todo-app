@@ -1,8 +1,19 @@
 import { TodoItem } from "../TodoItem";
+import { useAppSelector } from "../../hook";
 
 import './TodoTable.scss';
+import { Modal } from "../Modal";
+
+
 
 export const TodoTable = () => {
+    const todos = useAppSelector(state => state.todos.list)
+    const isModalOpen = useAppSelector(state => state.modal.isOpen)
+    const modalId = useAppSelector(state => state.modal.id);
+    const selectedTodo = todos.filter(item => {
+        return item.id === modalId;
+    })
+    
     return (
         <div className="todo-table">
             <div className="todo-table__header">
@@ -11,7 +22,14 @@ export const TodoTable = () => {
                 <div className="todo-table__title">Description</div>
                 <div className="todo-table__title">Status</div>
             </div>
-            <TodoItem />
-        </div>
+             {todos?.map((todo, idx) => (
+                <TodoItem 
+                 key={todo.id}
+                 idx={idx} 
+                 {...todo}
+                 />
+             ))}
+            {/* {isModalOpen ? <Modal id ={selectedTodo.id}  /> : null} */}
+        </div> 
     );
 }
