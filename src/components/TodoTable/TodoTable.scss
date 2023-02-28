@@ -1,0 +1,20 @@
+
+.todo-table {
+    padding-left: 60px;
+
+    &__header {
+        width: 700px;
+        display: flex;
+        justify-content: space-around;
+        background-color: whitesmoke;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        width: 100px;
+        padding: 5px;
+    }
+
+}
