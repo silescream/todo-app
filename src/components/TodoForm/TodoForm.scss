@@ -1,22 +1,28 @@
-
 .todo-form {
+  display: flex;
+  gap: 80px;
+  padding-left: 60px;
+  margin-bottom: 70px;
+
+  &__input {
+    position: relative;
+    width: 200px;
     display: flex;
-    gap: 80px;
-    padding-left: 60px;
-    margin-bottom: 70px;
-    
-    &__input {
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        font-weight: 600;
-    }
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 600;
+  }
 
-    &__button {
-        width: 70px;
-        height: 21px;
-        align-self: flex-end;
-    }
+  &__button {
+    width: 70px;
+    height: 21px;
+    align-self: flex-end;
+  }
 
+  &__error {
+    position: absolute;
+    top: 55px;
+    left: 0px;
+    color: red;
+  }
 }
